@@ -14,6 +14,10 @@ This innovative development board is designed for enthusiasts and professionals 
 - **Solar Charger Circuit**: An innovative design that allows the use of solar panels to charge batteries, boosting output to 5V.
 - **Connectivity**: Features two 2.54-10 connectors for standard breadboard compatibility, and one 1.25-4 connector for external communication with sensors and other devices.
 
+## Schematic
+
+![SQ001 Schematic](https://github.com/livinghuang/sq001/blob/main/schematic_sq001.png?raw=true)
+
 ## Applications
 
 The board is ideal for a range of applications, including but not limited to:
