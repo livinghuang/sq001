@@ -40,11 +40,6 @@ We encourage community contributions and offer support through various channels:
 - **Contributions**: For those interested in contributing, guidelines are available.
 - **Support**: For any issues or inquiries, contact our support team or use our GitHub issue tracker.
 
-## Reference
-
-1. HT-CT62 Module Pin Assignment
-   ![HT-CT62 pin assignment](https://github.com/livinghuang/sq001/blob/main/htct62.png?raw=true)
-
 ## License
 
 The development board is released under the MIT License, providing freedom and flexibility in development and distribution.
