@@ -2,6 +2,8 @@
 
 This innovative development board is designed for enthusiasts and professionals seeking a robust platform for advanced communication and development, particularly in the realms of IoT and environmental technology. It's built around a powerful main chip and offers an array of features to support a wide range of applications.
 
+![SQ001 Development Board](https://github.com/livinghuang/sq001/blob/main/SQ001.png?raw=true)
+
 ## Features
 
 - **Main Chip**: RISC-V at 160MHz, offering high performance for computing and processing tasks.
