@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Library/Arduino15/packages/Heltec-esp32"
+		},
+		{
+			"path": "../wireless_tracker_lee"
+		},
+		{
+			"path": "../sct6201h_lorawan_demo"
+		}
+	],
+	"settings": {}
+}
