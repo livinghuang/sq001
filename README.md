@@ -1,4 +1,4 @@
-# SQS001
+# SQ001
 
 ## Development Board Overview
 
@@ -62,7 +62,6 @@ We encourage community contributions and offer support through various channels:
 The development board is released under the MIT License, providing freedom and flexibility in development and distribution.
 
 <!-- # Peripheral Board Link -->
-<!-- ## SQS001 -->
+## Peripheral Board Link - SQS001
 
 https://github.com/livinghuang/sq001/blob/main/SQS001/
-
