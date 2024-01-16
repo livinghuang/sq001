@@ -22,8 +22,8 @@ The SQS001 is a versatile peripheral board designed to provide precise measureme
 
 ## Resources
 
-- [Datasheet for HDC1080](link-to-hdc1080-datasheet)
-- [Datasheet for BMP280](link-to-bmp280-datasheet)
+- [Datasheet for HDC1080](https://github.com/livinghuang/sq001/blob/main/SQS001/hdc1080.pdf)
+- [Datasheet for BMP280](https://github.com/livinghuang/sq001/blob/main/SQS001/BST_BMP280_DS001-1509562.pdf)
 
 For more information and detailed specifications, please refer to the datasheets linked above.
 
