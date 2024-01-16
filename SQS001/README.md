@@ -18,7 +18,7 @@ The SQS001 is a versatile peripheral board designed to provide precise measureme
 
 ## Pinout
 
-![SQS001 Pinout Diagram](https://github.com/livinghuang/sq001/blob/main/SQ001.png?raw=true)
+![SQS001 Pinout Diagram](https://github.com/livinghuang/sq001/blob/main/SQS001/SQS001.png?raw=true)
 
 ## Resources
 
