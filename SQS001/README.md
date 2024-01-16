@@ -1,6 +1,6 @@
-# Peripheral Board Overview
+# Peripheral Board :  SQS001
 
-# SQS001: Humidity, Temperature, and Air Pressure Sensor Board
+## Humidity, Temperature, and Air Pressure Sensor Board
 
 ## Overview
 
