@@ -1,4 +1,6 @@
-# Development Board Overview
+# SQS001
+
+## Development Board Overview
 
 This innovative development board is designed for enthusiasts and professionals seeking a robust platform for advanced communication and development, particularly in the realms of IoT and environmental technology. It's built around a powerful main chip and offers an array of features to support a wide range of applications.
 
@@ -59,9 +61,8 @@ We encourage community contributions and offer support through various channels:
 
 The development board is released under the MIT License, providing freedom and flexibility in development and distribution.
 
-# Peripheral Board Link
-
-## SQS001
+<!-- # Peripheral Board Link -->
+<!-- ## SQS001 -->
 
 https://github.com/livinghuang/sq001/blob/main/SQS001/
 
