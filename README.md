@@ -34,6 +34,21 @@ To begin using the development board:
 3. Install necessary drivers and libraries as instructed.
 4. Explore and experiment with sample projects.
 
+## Peripheral
+
+SQ001 offers robust peripheral support to assist users in completing their tasks efficiently. We have already introduced the initial peripheral board, SQS001, at the project's outset. Additionally, we are committed to continually developing the following target peripherals.
+
+1. SQS001: This board integrates HDC1080 and BMP280 sensors, providing humidity, temperature, and air pressure measurements in a single package.
+2. SQS1080: Designed specifically for humidity and temperature measurements, this peripheral incorporates the HDC1080 sensor.
+3. SQS280: This peripheral focuses on air pressure and temperature measurements, utilizing the BMP280 sensor. Note that temperature readings are derived from the internal temperature sensor of the BMP280 chip.
+4. SQS6050: Equipped with the MPU6050 sensor, this peripheral enables acceleration sensing capabilities.
+5. SQC485: This peripheral employs an RS485 to UART chip for communication purposes.
+6. SQCNBIOT: Designed for NBIOT connectivity, this peripheral uses a UART module to facilitate communication.
+7. SQC4G: Featuring a 4G module, this peripheral utilizes a UART module for communication tasks.
+8. SQSH001: This peripheral serves as a versatile housing, accommodating SMA Antennas, IPEX1 Antennas, Li-ion Batteries, and USB connectors.
+
+We are dedicated to expanding our range of peripherals to cater to a wide range of applications and user needs.
+
 ## Community Engagement and Support
 
 We encourage community contributions and offer support through various channels:
