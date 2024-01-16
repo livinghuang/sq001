@@ -27,7 +27,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 */
-#include "bsp.h"
+#include "../bsp.h"
 #include <Wire.h>
 #include "HDC1080.h"
 

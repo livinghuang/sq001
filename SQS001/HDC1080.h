@@ -29,6 +29,7 @@ THE SOFTWARE.
 */
 
 #ifndef _HDC1080_h
+
 #define _HDC1080_h
 #include <Arduino.h>
 #include "bsp.h"

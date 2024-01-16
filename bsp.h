@@ -1,5 +1,5 @@
-#ifndef SCT62_BSP_H
-#define SCT62_BSP_H
+#ifndef _BSP_H
+#define _BSP_H
 
 #define pVext 1
 #define pADC_BAT 2
