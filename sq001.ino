@@ -592,7 +592,7 @@ void setup()
   Serial.printf("%08X\n", (uint32_t)chipid);                   // print Low 4bytes.
   Serial.flush();
   delay(1000);
-  test_status = LORA_TEST_INIT;
+  test_status = BMP280_TEST_INIT;
 }
 
 void loop()
