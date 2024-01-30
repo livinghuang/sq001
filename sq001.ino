@@ -34,6 +34,8 @@ typedef enum
   LED_INIT,
   LED_TEST,
   BAT_TEST,
+  RS485_INIT,
+  RS485_TEST,
   _TEST_INIT,
   _TEST,
 } test_status_t;
@@ -572,6 +574,7 @@ void print_wakeup_reason()
     break;
   }
 }
+void printHex(byte *data, int length);
 void setup()
 {
   Serial.begin(115200);
@@ -592,7 +595,7 @@ void setup()
   Serial.printf("%08X\n", (uint32_t)chipid);                   // print Low 4bytes.
   Serial.flush();
   delay(1000);
-  test_status = BMP280_TEST_INIT;
+  test_status = RS485_INIT;
 }
 
 void loop()
@@ -707,6 +710,62 @@ void loop()
     delay(1000);
     break;
   }
+  case RS485_INIT:
+  {
+    pinMode(pVext, OUTPUT);
+    pinMode(pSDN, OUTPUT);
+    digitalWrite(pSDN, LOW);
+
+    pinMode(RO485_RO, INPUT);  // 将RO引脚配置为输入
+    pinMode(RO485_DI, OUTPUT); // 将DI引脚配置为输出
+    pinMode(RO485_DE, OUTPUT);
+    digitalWrite(RO485_DE, LOW); // Disable transmission initially
+    Serial1.begin(9600, SERIAL_8N1, RO485_RO, RO485_DI);
+    bool extern_24v = true;
+    if (extern_24v == true)
+    {
+      digitalWrite(pVext, HIGH);
+      digitalWrite(pSDN, HIGH);
+    }
+    test_status = RS485_TEST;
+    break;
+  }
+  case RS485_TEST:
+  {
+#define device_address 0x01
+    byte modbusQuery[] = {device_address, 0x03, 0x00, 0x00, 0x00, 0x08, 0x44, 0x0C}; // Example Modbus query
+    Serial.print("Sent:");
+    printHex(modbusQuery, sizeof(modbusQuery));
+    digitalWrite(RO485_DE, HIGH); // Enable transmission
+    Serial1.write(modbusQuery, sizeof(modbusQuery));
+    Serial1.flush();
+    digitalWrite(RO485_DE, LOW); // Disable transmission
+    while (1)
+    {
+      byte responseBuffer[256]; // Adjust the buffer size as needed
+      int bytesRead = Serial1.readBytes(responseBuffer, sizeof(responseBuffer));
+
+      if (bytesRead > 0)
+      {
+        // Process the received bytes here
+        Serial.print("Received:");
+        if (responseBuffer[0] == device_address)
+        {
+          printHex(responseBuffer, bytesRead);
+        }
+        else
+        {
+          Serial.println("No response received.");
+        }
+        break;
+      }
+      delay(100);
+    }
+    Serial.flush();
+    delay(1000);
+    break;
+  }
+
   case BAT_TEST:
   {
     float batteryVoltage = getBatVolt();
@@ -755,4 +814,18 @@ uint8_t GetBatteryLevel(void)
   Serial.print(batLevel);
   Serial.println("}");
   return batLevel;
+}
+void printHex(byte *data, int length)
+{
+  for (int i = 0; i < length; i++)
+  {
+    // Print each byte in hexadecimal format with leading zeros
+    if (data[i] < 0x10)
+    {
+      Serial.print("0");
+    }
+    Serial.print(data[i], HEX);
+    Serial.print(" ");
+  }
+  Serial.println(); // Print a newline character at the end
 }
