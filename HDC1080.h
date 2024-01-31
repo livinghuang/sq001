@@ -30,8 +30,7 @@ THE SOFTWARE.
 
 #ifndef _HDC1080_h
 #define _HDC1080_h
-#include <Arduino.h>
-#include "bsp.h"
+#include "global.h"
 
 #define HDC1080_ADDRESS (int)0x40
 #define HDC1080_CONFIG_REGISTER 0x02

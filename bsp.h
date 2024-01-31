@@ -14,3 +14,4 @@
 
 void power_On_Sensor_Bus();
 void power_Off_Sensor_Bus();
+void enter_deepsleep(void);

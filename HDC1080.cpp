@@ -27,9 +27,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 */
-#include "bsp.h"
-#include <Wire.h>
-#include "HDC1080.h"
+#include "global.h"
 
 HDC1080::HDC1080()
 {

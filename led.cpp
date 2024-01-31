@@ -1,5 +1,4 @@
-#include "led.h"
-#include "bsp.h"
+#include "global.h"
 void led(enum LedColor color)
 {
   pinMode(LED_PIN, OUTPUT);

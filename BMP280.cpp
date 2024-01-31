@@ -21,8 +21,7 @@
  * modified to work with the HelTec CubeCell Series
  */
 
-#include "BMP280.h"
-#include "bsp.h"
+#include "global.h"
 
 bool BMP280::begin()
 {
