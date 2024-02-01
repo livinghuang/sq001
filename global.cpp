@@ -1,5 +1,5 @@
 #include "global.h"
-
+esp_sleep_wakeup_cause_t wakeup_reason;
 void printHex(byte *data, int length)
 {
   for (int i = 0; i < length; i++)

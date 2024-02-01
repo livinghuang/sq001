@@ -1,22 +1,53 @@
----
-title: SILIQS - IoT PCB Boards
-description: A collection of PCB boards for IoT projects, including main boards with communication capabilities and various peripheral boards.
----
+# XDA101
 
-# SILIQS - IoT PCB Project
+## Description
 
-Welcome to the SILIQS project! This repository contains a range of PCB boards designed for IoT applications. Our project includes main boards for communication and several peripheral boards to support these main boards for various user purposes.
+XDA101 is an innovative project that leverages the power of IoT by using a temperature and humidity sensor to collect environmental data, which is then transmitted back to a LoRaWAN server. The core of the project is the Siliq SQ001, which acts as the main control unit. For precise and reliable measurements, the project uses the Texas Instruments HDC1080 temperature sensor.
 
-## Main Boards
+## Features
 
-Main boards are designed for communication and include a unique identifier in their name, starting with "SQxxx," where "xxx" represents the board number. For example, SQ001 is our first main board.
+- Temperature and humidity sensing with TI HDC1080.
+- Data transmission over LoRaWAN using Heltec HTCT62 ESP32_LoRaWAN.
+- Easy integration with LoRaWAN servers.
 
-## Peripheral Boards for Sensors
+## Hardware Requirements
 
-Peripheral boards designed for sensor applications are named starting with "SQSxxxx," where "xxxx" corresponds to the vendor and sensor chip name. For instance, SQS1080 is our board designed for the TI HDC1080 chip with an SQS interface.
+- Heltec HTCT62 ESP32_LoRaWAN module
+- TI HDC1080 temperature and humidity sensor
+- Additional components (wires, power supply, etc.)
 
-## Peripheral Boards for Communication
+## Software Requirements
 
-Peripheral boards designed for communication purposes are named starting with "SQCxxx," where "xxx" indicates the communication method. For example, SQC485 is our board designed for RS485 communication.
+- Firmware for the ESP32_LoRaWAN module (details provided in the 'Installation' section)
+- LoRaWAN server setup (details provided in the 'Usage' section)
 
-Feel free to explore our project and the various boards we offer. Contributions and feedback are welcome!
+## Installation
+
+### Setting up the Hardware
+
+1. Connect the TI HDC1080 sensor to the Heltec HTCT62 ESP32_LoRaWAN module.
+2. Ensure all connections are secure and the power supply is correctly configured.
+
+### Software Setup
+
+1. Flash the ESP32_LoRaWAN module with the provided firmware.
+2. Configure the module to connect to your LoRaWAN server (instructions below).
+
+## Usage
+
+1. Power up the XDA101 device.
+2. The device will automatically start sensing temperature and humidity.
+3. Data is transmitted at predefined intervals to the configured LoRaWAN server.
+
+## Contributing
+
+We welcome contributions to the XDA101 project! If you have suggestions or improvements, please fork the repository and create a pull request, or open an issue with the tag "enhancement".
+
+## Credits
+
+- Heltec for the HTCT62 ESP32_LoRaWAN module.
+- Texas Instruments for the HDC1080 sensor.
+
+## License
+
+[Specify the license under which your project is released]

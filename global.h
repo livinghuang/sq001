@@ -14,14 +14,10 @@
 #include "bat.h"
 #include "lorawan.h"
 #include "lora.h"
-#include "Dps310.h"
-#include "DpsClass.h"
 #include "HDC1080.h"
-#include "BMP280.h"
 #include "led.h"
 #include "_wifi.h"
 #include "sensor.h"
-#include "rs485.h"
 
 typedef enum
 {
@@ -49,10 +45,15 @@ typedef enum
   _TEST,
 } test_status_t;
 
+extern struct hdc1080_data hdc1080_result;
+
+extern struct bmp280_data bmp280_result;
+
 extern bool resendflag;
 extern bool deepsleepflag;
 extern bool interrupt_flag;
 extern bool reset_run_with_time_escape;
+extern esp_sleep_wakeup_cause_t wakeup_reason;
 
 void printHex(byte *data, int length);
 void run_with_time_escape(uint64_t escape_period_ms, void (*callback)(), void (*stop_callback)());

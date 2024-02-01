@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../../../Library/Arduino15"
 		}
 	],
 	"settings": {

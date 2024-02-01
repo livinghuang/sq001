@@ -9,7 +9,7 @@ uint8_t appKey[] = {0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 
 /* ABP para*/
 uint8_t nwkSKey[] = {0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88};
 uint8_t appSKey[] = {0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88};
-uint32_t devAddr = (uint32_t)0x88888888;
+uint32_t devAddr = (uint32_t)0x88888887;
 /*LoraWan channelsmask, default channels 0-7*/
 uint16_t userChannelsMask[6] = {0x00FF, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000};
 
@@ -34,7 +34,7 @@ LoRaMacRegion_t loraWanRegion = LORAMAC_REGION_AS923_AS2;
 DeviceClass_t loraWanClass = CLASS_A;
 
 /*the application data transmission duty cycle.  value in [ms].*/
-uint32_t appTxDutyCycle = 60000;
+uint32_t appTxDutyCycle = 15000;
 
 /*OTAA or ABP*/
 bool overTheAirActivation = false;
@@ -149,9 +149,11 @@ void lorawan_init(void)
   LoRaWAN.generateDeveuiByChipID();
 #endif
   Mcu.begin();
-  deviceState = DEVICE_STATE_INIT;
+  if (wakeup_reason == ESP_SLEEP_WAKEUP_UNDEFINED)
+  {
+    deviceState = DEVICE_STATE_INIT;
+  }
 }
-
 void lorawan_process(void)
 {
   switch (deviceState)
@@ -198,10 +200,8 @@ static void prepareTxFrame(uint8_t port)
 {
   float batteryVoltage = getBatteryVoltage();
   byte batteryLevel = getBatteryLevel();
-  appDataSize = 5;
-  appData[0] = 1; // batteryLevel;
-  appData[1] = 1; // batteryLevel;
-  appData[2] = 1; // batteryLevel;
-  appData[3] = 1; // batteryLevel;
-  appData[4] = 1; // batteryLevel;
+  fetchSensorData();
+  appDataSize = 1 + 8;
+  appData[0] = batteryLevel; // batteryLevel;
+  memcpy(appData + 1, &hdc1080_result, 8);
 }
